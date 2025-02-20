@@ -18,43 +18,47 @@ function App() {
 
   const featuredPup = puppies.find((pup) => pup.id === featPupId)
 
-console.log(featuredPup);
+  console.log(featuredPup);
 
   return (
 
-<div className="appContainer">
+    <div className="appContainer">
 
-    <div className="App">
+      <div className="App">
 
-      {puppies.map((puppy) => {
+        {puppies.map((puppy) => {
 
-        return ( <p onClick={ () => { setFeatPupId(puppy.id) } }  key={puppy.id}> {puppy.name} </p>
+          return (<p onClick={() => { setFeatPupId(puppy.id) }} key={puppy.id}> {puppy.name} </p>
 
-        );
+          );
 
-      })}
+        })}
+
+      </div>
 
 {featPupId && (
-        <div>
-          <h2> {featuredPup.name} </h2>
-          <ul>
-            <li> Age: {featuredPup.age} </li>
-            <li> Email: {featuredPup.email} </li>
-          </ul>
-        </div>
-      )}
+
+  <div class="puppyTable">
+
+    <h2> {featuredPup.name} </h2>
+
+    <ul>
+
+      <li> Age: {featuredPup.age} </li>
+
+      <li> Email: {featuredPup.email} </li>
+
+    </ul>
+
+  </div>
+
+)}
 
     </div>
 
-</div>
-
-  );
+);
 
 };
 
 export default App
-
-    
-
-
 
